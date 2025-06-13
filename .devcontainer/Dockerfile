@@ -55,7 +55,7 @@ RUN curl -o /home/$USERNAME/.git-completion.bash https://raw.githubusercontent.c
     echo 'PATH="$HOME/.local/bin:$PATH"' >> /home/$USERNAME/.bashrc && \
     echo 'alias python="python'${PYTHON_VERSION}'"' >> /home/$USERNAME/.bashrc && \
     echo 'source ~/.git-completion.bash' >> /home/$USERNAME/.bashrc && \
-    echo 'source ~/.git-prompt.sh\nGIT_PS1_SHOWDIRTYSTATE=true' >> /home/$USERNAME/.bashrc
-# RUN echo "PS1='"${PS1}"'" >> /home/$USERNAME/.bashrc
+    echo 'source ~/.git-prompt.sh\nGIT_PS1_SHOWDIRTYSTATE=true' >> /home/$USERNAME/.bashrc && \
+    echo "PS1='"${PS1}"'" >> /home/$USERNAME/.bashrc
 
 USER $USERNAME
