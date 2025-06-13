@@ -1,0 +1,35 @@
+{
+	"name": "pygit_env",
+	"build": { "dockerfile": "Dockerfile",
+        "args": {
+            "USERNAME": "cudauser",
+			"PYTHON_VERSION": "3.10"
+        }
+	},
+	// "runArgs": ["--init"],
+	"runArgs": ["--init", "--gpus",  "all", "--name", "cuda_ctn"],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "diffEditor.ignoreTrimWhitespace": false,
+                "files.insertFinalNewline": true,
+                "files.trimTrailingWhitespace": true,
+                "markdown-preview-enhanced.scrollSync": false
+            },
+            "extensions": [
+                "charliermarsh.ruff",
+                "mhutchie.git-graph",
+                "ms-ceintl.vscode-language-pack-ja",
+                "oderwat.indent-rainbow",
+                "alefragnani.Bookmarks",
+                "christian-kohler.path-intellisense",
+                "visualstudioexptteam.vscodeintellicode",
+                "ms-python.python",
+                "kevinrose.vsc-python-indent",
+                "njpwerner.autodocstring",
+                "shd101wyy.markdown-preview-enhanced",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    }
+}
