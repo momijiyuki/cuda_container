@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.4.1-cudnn-devel-ubuntu20.04
+FROM nvidia/cuda:12.4.1-runtime-ubuntu20.04
 
 ARG USERNAME="devconuser"
 ARG USERUID="1000"
@@ -44,17 +44,16 @@ RUN apt-get update && \
     curl -kL https://bootstrap.pypa.io/get-pip.py | python${PYTHON_VERSION} && \
     bash /tmp/install_lib/user_registration.sh && \
     rm -r /tmp/install_lib/
-# RUN pip install --no-cache-dir -r ~/workspace/requirements.txt
 
 # RUN pip install numpy torch matplotlib torchvision
 
 WORKDIR /home/$USERNAME
 
 RUN curl -o /home/$USERNAME/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash &&\
-    curl -o /home/$USERNAME/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
-
-RUN echo 'PATH="$HOME/.local/bin:$PATH"' >> /home/$USERNAME/.bashrc && \
-    # echo 'alias python="python'${PYTHON_VERSION}'"' >> /home/$USERNAME/.bashrc && \
+    curl -o /home/$USERNAME/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh && \
+    pip install --no-cache-dir -r /home/$USERNAME/requirements.txt && \
+    echo 'PATH="$HOME/.local/bin:$PATH"' >> /home/$USERNAME/.bashrc && \
+    echo 'alias python="python'${PYTHON_VERSION}'"' >> /home/$USERNAME/.bashrc && \
     echo 'source ~/.git-completion.bash' >> /home/$USERNAME/.bashrc && \
     echo 'source ~/.git-prompt.sh\nGIT_PS1_SHOWDIRTYSTATE=true' >> /home/$USERNAME/.bashrc
 # RUN echo "PS1='"${PS1}"'" >> /home/$USERNAME/.bashrc

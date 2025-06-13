@@ -1,0 +1,28 @@
+{
+    "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.tree.enableStickyScroll": false,
+    "editor.stickyScroll.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "chat.agent.enabled": false,
+    "chat.extensionTools.enabled": false,
+    "chat.focusWindowOnConfirmation": false,
+    "chat.setupFromDialog": false,
+    "telemetry.feedback.enabled": false,
+    "workbench.editor.empty.hint": "hidden",
+
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnType": true
+    },
+    "python.analysis.typeCheckingMode": "standard",
+    "ruff.enable": true,
+    "ruff.lint.enable": true,
+    "ruff.organizeImports": true,
+    "ruff.fixAll": true,
+    "ruff.configurationPreference": "filesystemFirst"
+    // "ruff.configuration": "${env:HOME}/.config/pyproject.toml"
+}
