@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.4.1-runtime-ubuntu20.04
+FROM nvidia/cuda:12.9.1-runtime-ubuntu22.04
 
 ARG USERNAME="devconuser"
 ARG USERUID="1000"
@@ -33,7 +33,7 @@ RUN apt-get update && \
     tree \
     sudo \
     tzdata \
-    python${PYTHON_VERSION} \
+    python${PYTHON_VERSION}-dev \
     python${PYTHON_VERSION}-tk \
     ca-certificates \
     openssh-client && \
