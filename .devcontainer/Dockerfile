@@ -33,6 +33,7 @@ RUN apt-get update && \
     tree \
     sudo \
     tzdata \
+    sysstat \
     python${PYTHON_VERSION}-dev \
     python${PYTHON_VERSION}-tk \
     ca-certificates \
