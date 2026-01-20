@@ -1,5 +1,5 @@
 {
-	"name": "pygit_env",
+	"name": "cuda_container",
 	"build": { "dockerfile": "Dockerfile",
         "args": {
             "USERNAME": "cudauser",
@@ -22,7 +22,6 @@
                 "ms-ceintl.vscode-language-pack-ja",
                 "oderwat.indent-rainbow",
                 "alefragnani.Bookmarks",
-                "christian-kohler.path-intellisense",
                 "ms-python.python",
                 "kevinrose.vsc-python-indent",
                 "njpwerner.autodocstring",
